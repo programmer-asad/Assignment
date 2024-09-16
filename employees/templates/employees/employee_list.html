@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+</head>
+<body>
+    <h1>Employee List</h1>
+    <a href="{% url 'add_employee' %}">Add Employee</a>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>Short Description</th>
+        <th>Actions</th>
+    </tr>
+    {% for employee in employees %}
+    <tr>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.designation }}</td>
+        <td>{{ employee.short_description }}</td>
+        <td>
+            <a href="{% url 'update_employee' employee.id %}">Update</a> | 
+            <a href="{% url 'delete_employee' employee.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+
+
+
+
+<!-- ========================================================================= -->
+
+
+
+<!-- <h1>Employee List</h1>
+<a href="{% url 'add_employee' %}">Add Employee</a>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>Short Description</th>
+        <th>Actions</th>
+    </tr>
+    {% for employee in employees %}
+    <tr>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.designation }}</td>
+        <td>{{ employee.short_description }}</td>
+        <td>
+            <a href="{% url 'update_employee' employee.id %}">Update</a> | 
+            <a href="{% url 'delete_employee' employee.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table> -->
