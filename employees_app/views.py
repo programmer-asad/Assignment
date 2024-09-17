@@ -8,6 +8,8 @@ def employee_list(request):
     employees = Employee.objects.all()
     return render(request, 'employees/employee_list.html', {'employees': employees})
 
+
+
 # Create a new employee
 def add_employee(request):
     if request.method == 'POST':
@@ -18,6 +20,8 @@ def add_employee(request):
     else:
         form = EmployeeForm()
     return render(request, 'employees/add_employee.html', {'form': form})
+
+
 
 # Update employee information
 def update_employee(request, employee_id):
@@ -30,6 +34,8 @@ def update_employee(request, employee_id):
     else:
         form = UpdateEmployeeForm(instance=employee)
     return render(request, 'employees/update_employee.html', {'form': form})
+
+
 
 # Delete an employee
 def delete_employee(request, employee_id):

@@ -10,7 +10,17 @@
 </head>
 <body>
     <h1>Employee List</h1>
-    <a href="{% url 'add_employee' %}">Add Employee</a>
+    <!-- <a href="{% url 'add_employee' %}">Add Employee</a> -->
+    
+  
+    <nav>
+        <menu>
+            <li><a href="">Home</a></li>
+            <li><a href="{% url 'add_employee' %}">Add Employee</a></li>             
+
+        </menu>
+    </nav>
+
     <table>
         <tr>
             <th>Name</th>
