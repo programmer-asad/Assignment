@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Management</title>
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+</head>
+<body>
+    <nav style="margin-top: 30px; justify-content: center; align-items: center;">
+        <a href="{% url 'home' %}"  style="margin-right: 10px;">Home</a>       
+        {% if user.is_authenticated %}
+            <a href="{% url 'create_event' %}" style="margin-right: 10px;">Create Event</a>
+            <a href="{% url 'booked_events' %}" style="margin-right: 10px;">My Bookings</a>           
+            <a href="{% url 'profile' %}" style="margin-right: 10px;">Profile</a>
+            <a href="{% url 'logout' %}" style="margin-right: 10px;">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}" style="margin-right: 10px;">Login</a>
+            <a href="{% url 'register' %}" >Register</a>
+        {% endif %}
+    </nav>
+
+    <hr>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
